@@ -21,7 +21,7 @@ export const useAuth = () => {
             .get<User>(`https://jsonplaceholder.typicode.com/users/${id}`)
             .then(res => {
                 if (res.data) {
-                    const isAdmin = res.data.id === 10 ? true : false;
+                    const isAdmin = res.data.id === 10;
                     setLoginUser({...res.data, isAdmin})
                     showMessage({title: "ログインしました", status: "success"})
                     history.push("/home");
