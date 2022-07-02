@@ -1,5 +1,6 @@
 {
   "name": "react_app",
+  "homepage": "https://saamon.github.io/react_app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -25,6 +26,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "postbuild": "cp build/index.html build/404.html",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -47,5 +51,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^4.0.0"
   }
 }
